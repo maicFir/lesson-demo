@@ -1,6 +1,17 @@
 # demo-elem
 
-> A Vue.js project
+> 关于本项目
+* 该项目主要技术栈 `vue/vuex/vue-router/eazy-mock/es6/vue-cli`
+* 数据请求使用的是[axios]('https://www.npmjs.com/package/axios')
+* 关于本案例使用的脚手架是 [vuejs-templates]('http://vuejs-templates.github.io/webpack/')
+* 1.0版本不会对vuex中action,mutation拆分，后面2.0版本会对这一部分进行封装拆分
+> 本案例主要解决的问题
+* 前后端分离mock模拟接口
+* vuex 实现state状态全局管理
+* 如何运用Eazy-mock模拟真实接口，根据前端请求参数，响应对应状态的数据
+* Element 菜单配置
+* 分页逻辑处理
+* vue相关的一些使用
 
 ## Build Setup
 
