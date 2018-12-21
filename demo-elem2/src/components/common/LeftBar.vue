@@ -13,8 +13,7 @@
           <span>{{item.name}}</span>
         </template>
         <el-menu-item-group v-for="(items, idx) in item.children" :key="idx">
-          <span class="name" @click="go"> {{items.name}}</span>
-          <!-- <router-link :to="items.path" class="sub-link">{{items.name}}</router-link> -->
+          <router-link :to="items.path" class="sub-link">{{items.name}}</router-link>
           <router-link v-for="(val, i) in items.children" :key="i" :to="val.path">
             <el-menu-item :index="val.index">{{val.name}}</el-menu-item>
           </router-link>
@@ -43,9 +42,6 @@ export default {
     },
     handleClose (key, keyPath) {
       console.log(key, keyPath)
-    },
-    go () {
-      this.$router.push({name: 'index', params: { userId: 123 }})
     }
 
   }
