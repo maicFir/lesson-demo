@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    *{
+      padding:0px;
+      margin: 0px;
+    }
+    .wrap-box {
+      width: 100%;
+    }
+    .wrap-box div{
+      width: 80px;
+      height: 30px;
+      float:left;
+      background-color: red;
+      border: 1px solid #111;
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+<script>
+  (function() {
+    var deviceW = window.screen.width;// 获取设备可视区域的宽度
+    var tagetW = 320; // 目标基础宽度
+    var meta = document.createElement('meta'); // 创建meta标签
+    var scale = deviceW/tagetW;
+    meta.name = 'viewport';
+    meta.content = `width=device-width, initial-scale=${scale},minimum-scale=${scale},maximum-scale=${scale}`
+    document.getElementsByTagName('head')[0].appendChild(meta)
+
+  })()
+</script>
+<body>
+  <!--
+    利用设置meta标签的缩放比
+  -->
+  <div class="wrap-box">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+</body>
+</html>

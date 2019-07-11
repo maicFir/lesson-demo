@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>事件循环机制</title>
+</head>
+<!--
+  // 事件循环机制
+  
+  主线程 执行同步代码
+  当函数调用时，在内存中形成一个调用记录，保存调用位置和内存变量信息，如果函数内部调用了其他函数就会形成一个调用记录，所有的调用记录形成一个调用栈
+
+  每一个消息与一个函数关联，当栈为空时，从队列中取出一个消息进行处理，这个处理过程包含了调用与关联函数（创建了一个初始堆栈），当栈再次为空时，消息处理结束
+
+  事件,IO,setTimeout,http请求
+
+  主线程执行同步代码 -> 异步 -> 回调
+
+-->
+
+<body>
+  <script>
+    /***/
+     var student = [{
+          age:0,
+          name: '張三'
+        },
+        {
+          age:1,
+          name: '王二'
+        }
+      ]
+      var getAge = function(age) {
+        console.log(age)
+      }
+      for(let i=0;i<student.length; i++) {
+        console.log('i', i); // 0, 1
+        setTimeout(v => {
+            console.log('--setTimeout--')
+            getAge(student[i].age++);// 1, 2
+            console.log('--setTimeout--')
+        },200)
+      }
+      for(let i=0;i<student.length; i++) {
+        console.log('--start--')
+        getAge(student[i].age++); // 0 ,1 
+        console.log('---end--')
+      }
+
+    /***/  
+
+
+    /***/
+    setTimeout(() => {
+      console.log(222)
+    })
+    async function fn() {
+      let a = 0;
+      return await new Promise((resolve, reject) => {
+        resolve(1);
+        setTimeout(v => {
+          console.log('1111')
+        })
+      })
+    }
+    const ajax3 = async () => {
+      console.log('start')
+      const ret3 = await fn();
+      console.log('ret3=', ret3);
+      console.log('ddededed')
+      console.log('end')
+    }
+    ajax3();
+
+    /*
+    31 i 0
+    32 i 1
+    40 --start--
+    29 0
+    42 ---end--
+    40 --start--
+    29 1
+    42 ---end--
+    62 start
+    64 ret3= 1
+    65 ddededed
+    66 end
+    50 222
+    57 1111
+    34 --setTimeout--
+    29 1
+    36 --setTimeout--
+    34 --setTimeout--
+    29 2
+    36 --setTimeout--
+    
+    
+    
+    
+    
+    **/
+    /**
+      以上执行的结果是:start 1 ddededed end 222 1111
+    */
+  </script>
+</body>
+
+</html>

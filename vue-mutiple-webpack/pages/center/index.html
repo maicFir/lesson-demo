@@ -1,0 +1,79 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telephone=no">
+		<meta name="format-detection" content="email=no">
+		<title>个人中心-首页</title>
+		<script>
+			(function() {
+				window.GLOBAL_CONFIG = {
+					webroot: '//' + location.host,
+					staticPath: '//' + location.host
+				}
+			}());
+		</script>
+		<link type="text/css" rel="stylesheet" href="/dist/libs/reset.min.css">
+		<link type="text/css" rel="stylesheet" href="/dist/commons/commons.css">
+		<link type="text/css" rel="stylesheet" href="/dist/center/index.css">
+	</head>
+	<body>
+		<header class="center-index-header">
+			<div class="side">
+				<div class="pic">
+					<img src="http://dummyimage.com/105x105">
+				</div>
+			</div>
+			<div class="main"><span>廖虎</span>（个人<i>|</i>13809886150）</div>
+		</header>
+		<section class="center-index-list">
+			<a href="" class="item">
+				<div class="icon-wrap"><span class="icon heart"></span></div>
+				<div class="desc">我的益途</div>
+				<div class="cont">3分</div>
+				<div class="arrow-wrap"><span class="arrow"></span></div>
+			</a>
+			<a href="" class="item">
+				<div class="icon-wrap"><span class="icon ball"></span></div>
+				<div class="desc">我的活动</div>
+				<div class="cont">5个</div>
+				<div class="arrow-wrap"><span class="arrow"></span></div>
+			</a>
+			<a href="" class="item">
+				<div class="icon-wrap"><span class="icon gift"></span></div>
+				<div class="desc">积分礼品</div>
+				<div class="cont"><i>200</i>积分</div>
+				<div class="arrow-wrap"><span class="arrow"></span></div>
+			</a>
+			<a href="" class="item">
+				<div class="icon-wrap"><span class="icon medal"></span></div>
+				<div class="desc">荣誉排名</div>
+				<div class="cont"></div>
+				<div class="arrow-wrap"><span class="arrow"></span></div>
+			</a>
+			<a href="" class="item">
+				<div class="icon-wrap"><span class="icon medal"></span></div>
+				<div class="desc">积分排名</div>
+				<div class="cont"></div>
+				<div class="arrow-wrap"><span class="arrow"></span></div>
+			</a>
+			<a href="" class="item">
+				<div class="icon-wrap"><span class="icon head"></span></div>
+				<div class="desc">个人资料</div>
+				<div class="cont"><i>待完善</i></div>
+				<div class="arrow-wrap"><span class="arrow"></span></div>
+			</a>
+		</section>
+
+		<div id="J_navTabs">
+			<nav-tabs :active-tab="activeTab"></nav-tabs>
+		</div>
+		
+		<script src="/dist/libs/vue-2.5.2.min.js"></script>
+		<script src="/dist/commons/commons.js"></script>
+		<script src="/dist/center/index.js"></script>
+	</body>
+</html>

@@ -1,0 +1,62 @@
+@import "./mixins.styl";
+
+// 底部导航
+.nav-tabs {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	.inner {
+		width: px750(750);
+		height: px750(98);
+		margin: 0 auto;
+		background: #f9f9f9;
+		border-top: 1px solid #f0f0f0;
+		display-flex();
+		align-items(center);
+		a {
+			font-size: px750(20);
+			color: #666;
+			item-flex(1)
+			text-align: center;
+			> i {
+				display: inline-block;
+				width: px750(44);
+				height: px750(40);
+				background-repeat: no-repeat;
+				background-position: center center;
+				background-size: 100%;
+			}
+			> label {
+				display: block;
+				margin-top: px750(10);
+			}
+			.icon-home {
+				background-image: url("../images/nav-tabs/home.png");
+			}
+			.icon-activity {
+				background-image: url("../images/nav-tabs/activity.png");
+			}
+			.icon-gift {
+				background-image: url("../images/nav-tabs/gift.png");
+			}
+			.icon-mine {
+				background-image: url("../images/nav-tabs/mine.png");
+			}
+			&.active {
+				color: #e14143;
+				.icon-home {
+					background-image: url("../images/nav-tabs/home-active.png");
+				}
+				.icon-activity {
+					background-image: url("../images/nav-tabs/activity-active.png");
+				}
+				.icon-gift {
+					background-image: url("../images/nav-tabs/gift-active.png"); 
+				}
+				.icon-mine {
+					background-image: url("../images/nav-tabs/mine-active.png");
+				}
+			}
+		}
+	}
+}

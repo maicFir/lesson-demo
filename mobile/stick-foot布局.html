@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>stick-foot布局</title>
+  <style>
+    /*
+      stick-foot: 不管内容多少，底部foot始终在最下方
+    */
+    * {padding: 0px; margin:0px;}
+    /*
+      负边距方式
+       html,body{
+        height:100%;
+      }
+      .wrap-box{
+        min-height: 100%;
+      }
+      .content {
+        padding-bottom: 46px;
+      }
+      .foot {
+        margin-top:-46px;
+      }
+      .foot>p {
+        margin: 10px;
+      }
+      .content p:nth-of-type(2n){
+        background-color: red;
+      }
+    */
+    /*flex布局*/
+    html,body{
+      height: 100%;
+    }
+    .wrap-box{
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    .header {
+      height: 50px;
+      text-align: center;
+    }
+    .content {
+      flex: 1;
+    }
+    .content p{
+      margin: 10px;
+      float: left;
+    }
+    .foot {
+
+    }
+   
+  </style>
+</head>
+<body>
+  <div class="wrap-box">
+    <div class="header">头部</div>
+    <div class="content">
+      <p>1</p>
+      <p>2</p>
+      <p>3</p>
+      <p>4</p>
+      <p>5</p>
+      <div>
+        <p>111</p>
+        <p>222</p>
+      </div>
+      <p>1</p>
+      <p>2</p>
+      <p>3</p>
+      <p>4</p>
+      <p>5</p> 
+      <p>1</p>
+      <p>2</p>
+      <p>3</p>
+      <p>4</p>
+      <p>5</p>
+      <p>1</p>
+      <p>2</p>
+      <p>3</p>
+      <p>4</p>
+      <p>5</p>
+      <p>1</p>
+      <p>1</p>
+      <p>2</p>
+      <p>3</p>
+      <p>4</p>
+      <p>5</p>
+      <p>1</p>
+      <p>2</p>
+      <p>3</p>
+      <p>4</p>
+      <p>5</p>
+      <p>1</p>
+    </div>
+    <div class="foot">
+        <p>我是底部</p>
+    </div>
+  </div>
+
+</body>
+</html>

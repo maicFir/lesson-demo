@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>函数节流</title>
+  <!--
+    函数节流：频繁事件触发，特定时间内执行一次代码
+  -->
+  <style>
+    *{padding:0px;margin:0px;}
+    html,body{
+      min-height: 100%;
+    }
+    #app{
+      overflow-y: auto;
+    }
+  </style>
+</head>
+<body>
+    <div id="app">
+      <div>aa</div>
+      <div>aa</div>
+      <div>aa</div>
+      <div>aa</div>
+      <div>aa</div>
+      <div>aa</div>
+      <div>aa</div>
+      <div>aa</div>
+      <div>aa</div>
+      <div>aa</div>
+      <div>aa</div>
+      <div>aa</div>
+      <div>aa</div>
+      <div>aa</div>
+      <div>aa</div>
+      <div>aa</div>
+      <div>aa</div>
+      <div>aa</div>
+      <div>aa</div>
+      <div>aa</div>
+      <div>aa</div>
+      <div>aa</div>
+      <div>aa</div>
+      <div>aa</div>
+      <div>aa</div>
+      <div>aa</div>
+      <div>aa</div>
+      <div>aa</div>
+      <div>aa</div>
+      <div>aa</div>
+    </div>
+    <input type="text" id="search">
+    <script>
+      (function() {
+        /*
+          函数节流：在指定的一段时间内让js执行一次
+          定义一个变量，设置为true,
+        **/
+        var app = document.getElementById('app');
+        var flag = true;
+        app.style.height = window.screen.height + 'px';
+        app.onscroll = function() {
+          if (!flag) {
+            return;
+          }
+          flag = false;
+          setTimeout(() => {
+            flag = true;
+            console.log('函数节流', Math.random())
+          },500)
+        }
+        /*
+          函数防抖:输入框
+          利用定时器做缓冲池，在指定时间间隔内运行代码，当第二次调用时，会清除前一次定时器，并重新设置一个新的定时器
+        **/
+        const ajax = async (type) => {
+          const ret = await new Promise((resolve, reject) => {
+            resolve(Math.random()+ `:${type}`)
+          })
+          console.log(ret)
+          return ret
+        }
+        const ajax2 = (type) => {
+          const ret2 = new Promise((resolve, reject) => {
+            resolve(Math.random() + `:${type}`)
+          })
+          return ret2
+        }
+         
+        const searchDom = document.getElementById('search');
+        let timer = null;
+        searchDom.oninput = async function(e){
+          const target = e.target || e.srcElement;
+          clearInterval(timer);// 清除未执行的代码
+          timer = setTimeout(async function(){
+            const rest = await ajax('ajax1');
+            console.log('rest:', rest)
+            ajax2('ajax2').then(res => {
+              console.log(res)
+            });
+          }, 800)
+        }
+
+      })();
+    </script>
+</body>
+</html>

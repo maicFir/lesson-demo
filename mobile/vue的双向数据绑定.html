@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>vue的双向数据绑定</title>
+  <!--
+    Object.defineProperty()
+  -->
+</head>
+<body>
+  <div id="app">
+      <p id="title"></p>
+      <p id="age"></p>
+  </div>
+<script>
+  var initData = {
+    title: 'hello',
+    age: 20
+  }
+  // 观察数据
+  function Observer(data) {
+    Object.keys(data).map(key => {
+      defineReceive(data,key, data[key]);
+      document.getElementById(key).innerHTML = `${data[key]}`
+    })
+    
+  }
+  // 数据劫持
+  function defineReceive(obj, key, value) {
+    let ret = '';
+    Object.defineProperty(obj,key, {
+      get() {
+        return value
+      },
+      set(nVal) {
+        console.log('数据发生变化了...');
+        let ret = '';
+        value = nVal;
+        document.getElementById(key).innerHTML = nVal;
+      }
+    })
+  }
+  Observer(initData)
+
+</script>
+</body>
+</html>

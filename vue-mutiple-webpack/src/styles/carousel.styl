@@ -1,0 +1,16 @@
+@import "./mixins.styl";
+
+.carousel {
+	width: 100%;
+	height: px750(500);
+	&-dot {
+		width: px750(12) !important;
+		height: px750(12) !important;
+		background: #999 !important;
+		text-indent: -99999px;
+		vendor(border-radius, 50%);
+		&.active {
+			background: #fff !important;
+		}
+	}
+}

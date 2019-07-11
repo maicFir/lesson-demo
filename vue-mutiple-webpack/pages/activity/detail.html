@@ -1,0 +1,95 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telephone=no">
+		<meta name="format-detection" content="email=no">
+		<title>活动详情</title>
+		<script>
+			(function() {
+				window.GLOBAL_CONFIG = {
+					webroot: '//' + location.host,
+					staticPath: '//' + location.host
+				}
+			}());
+		</script>
+		<link type="text/css" rel="stylesheet" href="/dist/libs/reset.min.css">
+		<link type="text/css" rel="stylesheet" href="/dist/commons/commons.css">
+		<link type="text/css" rel="stylesheet" href="/dist/activity/detail.css">
+	</head>
+	<body>
+		<header class="header" id="J_header">
+			<carousel :indicators="true" :auto="3000" :responsive="0">
+				<img src="http://dummyimage.com/750x500"><img src="http://dummyimage.com/750x500"><img src="http://dummyimage.com/750x500">
+			</carousel>
+			<h1>免费舞蹈教学，免学费免费舞蹈教学，免学费免费舞蹈教学，免学费</h1>
+		</header>
+		<div class="signup-list">
+			<div class="column-title">
+				<span class="title">已报名</span>
+				<span class="count">已有<i>4</i>人报名</span>
+			</div>
+			<ul class="name-list">
+				<li class="item">
+					<div class="pic">
+						<img src="http://dummyimage.com/120x120">
+					</div>
+					<p class="name">lemon</p>
+				</li>
+				<li class="item">
+					<div class="pic">
+						<img src="http://dummyimage.com/120x120">
+					</div>
+					<p class="name">lemon</p>
+				</li>
+				<li class="item">
+					<div class="pic">
+						<img src="http://dummyimage.com/120x120">
+					</div>
+					<p class="name">lemon</p>
+				</li>
+				<li class="item">
+					<div class="pic">
+						<img src="http://dummyimage.com/120x120">
+					</div>
+					<p class="name">lemon</p>
+				</li>
+			</ul>
+		</div>
+		<div class="ac-info">
+			<div class="column-title">
+				<span class="title">活动信息</span>
+			</div>
+			<dl class="detail">
+				<dt>活动奖励：</dt>
+				<dd><i>20</i>积分</dd>
+				<dt>活动时间：</dt>
+				<dd>2017年12月30日-2017年12月30日</dd>
+				<dt>地址：</dt>
+				<dd>广东省深圳市南山区科技园</dd>
+			</dl>
+		</div>
+		<div class="ac-intro">
+			<div class="column-title">
+				<span class="title">活动介绍</span>
+			</div>
+			<div class="detail">
+				<p>以把杆基训为主，修正形体的同时，提高学员身体的平衡，协调，控制能力以及对音乐更深以把杆基训为主，修正形体的同时，提高学员身体的平衡</p>
+			</div>
+		</div>
+		<section class="button-wrap">
+			<div class="submit-button">马上报名</div>
+		</section>
+		
+		<div id="J_navTabs">
+			<nav-tabs :active-tab="activeTab"></nav-tabs>
+		</div>
+
+		<script src="/dist/libs/vue-2.5.2.min.js"></script>
+		<script src="/dist/commons/commons.js"></script>
+		<script src="/dist/activity/detail.js"></script>
+	</body>
+</html>

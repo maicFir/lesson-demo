@@ -1,0 +1,123 @@
+$baseFontSize = 100
+$baseWidth = 1080
+// 1080设计搞
+px1080(px) {
+	(px/$baseFontSize)*1rem
+}
+// 750设计稿
+px750(px) {
+	(px*$baseWidth/750/$baseFontSize)*1rem
+}
+// 720设计搞
+px720(px){ 
+	(px*$baseWidth/720/$baseFontSize)*1rem 
+}
+// 640设计搞
+px640(px){ 
+	(px*$baseWidth/640/$baseFontSize)*1rem 
+}
+
+vendor(prop, args) {
+	-webkit-{prop}: args;
+	-moz-{prop}: args;
+	-o-{prop}: args;
+	-ms-{prop}: args;
+	{prop}: args;
+}
+text-ellipsis() {
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+multi-text-ellipsis(line) {
+	display-box();
+	vendor(line-clamp, line);
+	vendor(box-orient, vertical);
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+// flex布局
+display-flex() { 
+	display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */ 
+	display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */ 
+	display: -ms-flexbox; /* TWEENER - IE 10 */ 
+	display: -webkit-flex; /* NEW - Chrome */ 
+	display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+}
+
+// flex布局item拉伸
+item-flex(args) {
+	-webkit-box-flex: args; /* OLD - iOS 6-, Safari 3.1-6 */ 
+	-moz-box-flex: args; /* OLD - Firefox 19- */ 
+	-webkit-flex: args; /* Chrome */ 
+	-ms-flex: args; /* IE 10 */ 
+	flex: args; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+}
+
+// 定义旧版本box布局在主轴上的位置
+box-pack(args) {
+	-webkit-box-pack: args;
+	-moz-box-pack: args;
+	-ms-box-pack: args;
+	box-pack: args;
+}
+
+// 定义旧版本box布局在交叉轴的位置
+box-align(args) {
+	-webkit-box-align: args;
+	-moz-box-align: args;
+	-ms-box-align: args;
+	box-align: args;
+}
+
+// 定义flex布局项目在主轴的位置
+justify-content(args) {
+	-webkit-justify-content: args;
+	-moz-justify-content: args;
+	-ms-justify-content: args;
+	justify-content: args;
+}
+
+// 定义flex布局项目在交叉轴的位置
+align-items(args) {
+	-webkit-align-items: args;
+	-moz-align-items: args;
+	-ms-align-items: args;
+	align-items: args;
+}
+
+
+
+// flex布局排列顺序
+flex-order(num) {
+	-webkit-box-ordinal-group: num;
+	-moz-box-ordinal-group: num;
+	-ms-flex-order: num;
+	-webkit-order: num;
+	order: num;
+}
+
+// flex布局主轴的方向
+flex-direction-row() {
+	-webkit-box-orient: horizontal;
+	-moz-box-orient: horizontal;
+	-ms-box-orient: horizontal;
+	box-orient: horizontal;
+	-webkit-flex-direction: row;
+	-moz-flex-direction: row;
+	-mz-flex-direction: row;
+	flex-direction: row;
+}
+
+// flex布局交叉轴的方向
+flex-direction-column() {
+	-webkit-box-orient: vertical;
+	-moz-box-orient: vertical;
+	-ms-box-orient: vertical;
+	box-orient: vertical;
+	-webkit-flex-direction: column;
+	-moz-flex-direction: column;
+	-mz-flex-direction: column;
+	flex-direction: column;
+}

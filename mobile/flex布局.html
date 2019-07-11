@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>flex弹性布局</title>
+  <style>
+    *{padding:0px;margin: 0px;}
+    .wrap-box-1 {
+      display: flex;
+      flex-direction: row; 
+      /*
+        column 主轴在垂直方向，从上到下，起点在最顶端
+        row: 主轴水平方向，从左到右 起点在最左端
+        row-reservse: 主轴为水平，起点在最右端,从右往左排列4321
+        column-reverse 主轴为垂直方向，起点在最下方，从上往下4321
+      */
+      flex-wrap: nowrap;
+        /*
+          nowrap: 不换行
+          wrap:换行
+          wrap-reverse: 换行
+          默认不换行
+      */
+      justify-content: center;
+              /*
+                主轴对齐方式
+                flex-start, 左对齐
+                flex-end,右对齐
+                center,居中
+                space-between 居中对齐
+                space-around 两侧间隔相等
+              */
+      align-items: flex-start;
+      /*
+        交叉轴上如何对齐
+      */
+    }
+
+    .wrap-box-1 div {
+      flex: 1
+    }
+    .wrap-box-1 div:nth-child(2n) {
+      background-color: yellow;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap-box-1">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>4</div>
+    <div>4</div>
+    <div>4</div>
+  </div>
+  <div class="wrap-box-2">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+  </div>
+</body>
+</html>

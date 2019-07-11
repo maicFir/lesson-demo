@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>call</title>
+</head>
+<body>
+    <script>
+        function A(age) {
+          this.name = 'tom';
+          this.age = age;
+          console.log(this.__proto__.constructor === B.prototype.constructor)
+          //console.log(this === new B())
+        };
+        A.prototype.getName = function() {
+          console.log(this.name, this.age)
+        }
+        function B() {
+          A.call(this, 20);
+          this.getName = function() {
+            console.log('===',this)
+          }
+        }
+        var b = new B();
+        console.log(b)
+        b.getName();
+        // b.getName(); call方式， b对象
+      
+      </script>
+</body>
+</html>

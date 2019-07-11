@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>自定义事件</title>
+</head>
+<body>
+  <script>
+    /*
+      实现自定义事件
+    */ 
+    function Emit() {
+      this.obj = {};
+    }
+    Emit.prototype.on = function(name, fn) {
+      if (!this.obj[name]) {
+        this.obj[name] = [];
+      }
+      this.obj[name].push(fn)
+    }
+    Emit.prototype.off = function(name, fn) {
+      if (this.obj[name]) {
+        if (fn) {
+          const idx = this.obj[name].indexOf(fn);
+          if (idx > -1) { // 存在
+            this.obj[name].splice(idx, 1)
+          }
+        } else {
+          this.obj[name].length = 0;
+        }
+      }
+    }
+    Emit.prototype.emit = function(name, parms) {
+      // 存在
+      if (this.obj[name]) {
+        this.obj[name].map((v) => {
+          v(parms)
+        })
+      }
+    }
+    const emitObj = new Emit();
+    emitObj.on('click', function(parms) {
+      console.log(parms)
+    });
+    emitObj.emit('click',{a: 1, b:2});
+    emitObj.off('click')
+    console.log(emitObj)
+  </script>
+</body>
+</html>

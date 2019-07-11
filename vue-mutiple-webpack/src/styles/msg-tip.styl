@@ -1,0 +1,19 @@
+@import "./mixins.styl"
+// tip提示
+.msg-tip {
+	position: fixed; 
+	left: 0; 
+	bottom: px1080(140); 
+	width: 100%; 
+	min-height: px1080(100); 
+	z-index: 10000; 
+	text-align: center;
+	span {
+		display: inline-block; 
+		line-height: 1.5; 
+		padding: px1080(10) px1080(68); 
+		background: rgba(0, 0, 0, .5); 
+		color: #fff; 
+		font-size: px1080(40);
+	}
+}

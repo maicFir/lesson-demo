@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>rem</title>
+</head>
+<script>
+  (function() {
+    var elDom = document.documentElement;
+    function fixabel() {
+      var w = elDom.getBoundingClientRect().width;
+      var basePx = 16;
+      elDom.style.fontSize = w/basePx + 'px';
+    };
+    fixabel();
+    window.addEventListener('resize', function() {
+      fixabel()
+    })
+  })()
+</script>
+<style>
+  *{
+    padding:0;
+    margin: 0;
+  }
+  .wrap-box div{
+    width: 4rem;
+    height: 4rem;
+    border:1px solid #111;
+    float: left;
+    box-sizing: border-box;
+  }
+</style>
+<body>
+  <div class="wrap-box">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+</body>
+</html>

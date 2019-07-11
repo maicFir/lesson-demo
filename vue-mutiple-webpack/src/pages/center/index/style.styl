@@ -1,0 +1,113 @@
+@import "../../../styles/mixins.styl";
+
+html, body {
+	min-height: 100%;
+}
+
+body {
+	background: #f4f4f4;
+}
+
+.center-index-header {
+	width: px750(750);
+	height: px750(200);
+	margin: 0 auto;
+	background: url("./img/header-bg.png") 0 0 no-repeat;
+	background-size: 100%;
+	display-flex();
+	align-items(center);
+	.side {
+		width: px750(165);
+		.pic {
+			width: px750(109);
+			height: px750(109);
+			margin: 0 auto;
+			vendor(border-radius, 50px);
+			overflow: hidden;
+			border: 1px solid #fff;
+		}
+	}
+	.main {
+		item-flex(1 0 auto);
+		font-size: px750(24);
+		color: #fff;
+		> span {
+			font-size: px750(36);
+		}
+		> i {
+			font-style: normal;
+			margin: 0 px750(5);
+		}
+	}
+}
+
+.center-index-list {
+	width: px750(750);
+	margin: 0 auto;
+	background: #fff;
+	.item {
+		height: px750(90);
+		display-flex();
+		align-items(center);
+		.icon-wrap {
+			width: px750(95);
+		}
+		.desc {
+			width: px750(160);
+			font-size: px750(34);
+			color: #333;
+		}
+		.cont {
+			item-flex(1 0 auto);
+			text-align: right;
+			font-size: px750(30);
+			color: #c2c2c2;
+			> i {
+				font-style: normal;
+				color: #ff6b05;
+			}
+		}
+		.arrow-wrap {
+			width: px750(70);
+			text-align: center;
+			.arrow {
+				position: relative;
+				top: px750(3);
+				display: inline-block;
+				width: px750(16);
+				height: px750(25);
+				background: url("../../../images/arrow.png") 0 0 no-repeat;
+				background-size: 100%;
+			}
+		}
+		.icon-wrap {
+			text-align: center;
+			.icon {
+				display: inline-block;
+				width: px750(40);
+				height: px750(40);
+				background-repeat: no-repeat;
+				background-position: 0 0;
+				background-size: 100%;
+				&.heart {
+					background-image: url("./img/heart.png");
+				}
+				&.gift {
+					background-image: url("./img/gift.png");
+				}
+				&.ball {
+					background-image: url("./img/ball.png");
+				}
+				&.medal {
+					background-image: url("./img/medal.png");
+				}
+				&.head {
+					background-image: url("./img/head.png");
+				}
+			}
+		}
+	}
+	.item + .item {
+		border-top: 1px solid #f4f4f4;
+	}
+}

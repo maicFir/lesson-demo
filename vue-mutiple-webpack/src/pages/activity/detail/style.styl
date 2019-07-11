@@ -1,0 +1,122 @@
+@import "../../../styles/mixins.styl";
+
+html, body {
+	min-height: 100%;
+}
+
+body {
+	background: #f4f4f4;
+}
+
+.header {
+	width: px750(750);
+	height: px750(640);
+	margin: 0 auto;
+	background: #fff;
+	h1 {
+		height: px750(140);
+		font-size: px750(36);
+		color: #333;
+		padding: px750(30);
+	}
+}
+
+.column-title {
+	font-size: px750(30);
+	.title {
+		color: #e14143;
+		&:before {
+			content: "";
+			display: inline-block;
+			width: px750(10);
+			height: px750(30);
+			background: #e14143;
+			margin-right: px750(15);
+		}
+	}
+	.count {
+		float: right;
+		> i {
+			font-style: normal;
+			color: #e14143;
+		}
+	}
+}
+// 已报名
+.signup-list {
+	.name-list {
+		padding-top: px750(30);
+		display-flex();
+		align-items(center);
+		.item {
+			item-flex(1 1 auto);
+		}
+		.pic {
+			width: px750(120);
+			height: px750(120);
+			margin: 0 auto;
+			vendor(border-radius, 50px);
+			overflow: hidden;
+		}
+		.name {
+			font-size: px750(24);
+			text-align: center;
+			margin-top: px750(20);
+		}
+	}
+}
+// 活动信息
+.ac-info {
+	.detail {
+		font-size: px750(28);
+		line-height: 2;
+		padding-top: px750(10);
+		dt {
+			float: left;
+			width: px750(141);
+			text-align: right;
+		}
+		dd {
+			margin-left: px750(141);
+			> i {
+				color: #e14143;
+				font-style: normal;
+			}
+		}
+	}
+}
+// 活动介绍
+.ac-intro {
+	font-size: px750(28);
+	line-height: 2;
+}
+
+.button-wrap {
+	padding: px750(30) 0 px750(148) 0;
+	border-top: 1px solid #ededed;
+	.submit-button {
+		width: px750(630);
+		height: px750(88);
+		line-height: px750(88);
+		margin: 0 auto;
+		vendor(border-radius, 4px);
+		text-align: center;
+		background: #e14143;
+		color: #fff;
+	}
+}
+
+.signup-list,
+.ac-info,
+.ac-intro {
+	width: px750(750);
+	margin: 0 auto;
+	padding:px750(30);
+	background: #fff;
+}
+
+.header + .signup-list, 
+.signup-list + .ac-info, 
+.ac-info + .ac-intro {
+	margin-top: px750(15);
+}

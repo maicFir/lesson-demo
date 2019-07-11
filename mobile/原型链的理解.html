@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>原型链</title>
+  <!--
+    1：如果构造函数内部本身有属性，则会找自身属性，如果没有则会到原型链去找
+    2: 当B继承于A，B.prototype = new A();// B.prototype.__prototype__.constructor === A.prototype.constructor
+       var b = new B(); // 将b的隐式b.__prototype__.constructor === A.prototype.constructor
+       
+  -->
+</head>
+<body>
+   <script>
+       function A() {
+         this.name = 'Tom';
+         this.sayName = function() {
+           console.log('name:', this.name)
+         }
+       }
+       // A.prototype.name = 'jake';
+       A.prototype.__proto__.name = 'dede';
+       var a = new A();
+       console.log(a.sayName());
+       
+       function B() {
+         // this.name = 'Jake';
+       }/*
+       B.prototype.age = '20';
+       B.prototype.sayName = function() {
+         console.log('hello:', this.name, 'age:', this.age)
+       }*/
+       B.prototype = a;
+
+       var b = new B();
+       console.log('b', b)
+       console.log(b.__proto__.constructor === A.prototype.constructor);// true
+       b.sayName();
+       
+    </script>
+</body>
+</html>
